@@ -1,0 +1,77 @@
+package Serie4IstruzioniDiControllo.Doc;
+
+public class CorrispondenzaDoWhile {
+    public static void main(String[] args) {
+        Corrispondenza do .. while -> while
+-----------------------------------
+
+do {
+    seqIstruzioni;
+} while (condizione);
+
+
+----
+
+(Da preferirsi)
+
+seqIstruzioni;
+while (condizione) {
+    seqIstruzioni;
+}
+
+
+----
+
+boolean firstRun = true;
+while (firstRun || condizione) {
+    seqIstruzioni;
+    firstRun = false;
+}
+
+----
+
+while (true) {
+    seqIstruzioni;
+    if (condizione)
+        break;
+}
+
+==========
+
+Corrispondenza while -> do .. while
+-----------------------------------
+
+while (condizione) {
+    seqIstruzioni;
+}
+
+---
+
+(Da preferirsi)
+
+if (condizione) {
+    do {
+       seqIstruzioni;
+    } while(condizione);
+} 
+
+---
+
+do {
+    if (condizione) {
+       seqIstruzioni;
+    }
+} while(condizione);
+
+---
+
+boolean firstRun = true;
+do {
+    if (!firstRun) {
+       seqIstruzioni;
+    }
+    firstRun = false;
+} while(condizione);
+    }
+    
+}
